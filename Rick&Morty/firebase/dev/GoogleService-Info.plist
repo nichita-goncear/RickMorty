@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>104017950029-e7isbmd9rbs5q2i7ij7mndmgj9gpn7nc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.104017950029-e7isbmd9rbs5q2i7ij7mndmgj9gpn7nc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBIn1K2yaN5fAuotq1DKO7Lu_-DI9PbGhA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>104017950029</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>midnight.rick-n-morty.Rick-Morty-dev</string>
+	<key>PROJECT_ID</key>
+	<string>dev-rick-morty</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dev-rick-morty.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:104017950029:ios:e334964e879a9bbf8f7304</string>
+</dict>
+</plist>
