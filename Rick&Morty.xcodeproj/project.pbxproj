@@ -10,6 +10,8 @@
 		12EC9AA51B64AEE5A443FBBE /* Pods_Rick_MortyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BEEAD711DE77E0DCEACC8E /* Pods_Rick_MortyTests.framework */; };
 		62FF2ADDB8E888604F378D9C /* Pods_Rick_Morty_Rick_MortyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078497804E642597C38062F8 /* Pods_Rick_Morty_Rick_MortyUITests.framework */; };
 		74EB350A54C82CE7EAD4A659 /* Pods_Rick_Morty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8303C79FF9FB60EADF570B /* Pods_Rick_Morty.framework */; };
+		FA5EE5B4299EC60B00F7C6D9 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5B3299EC60B00F7C6D9 /* BaseView.swift */; };
+		FA5EE5B7299EC6C000F7C6D9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5B6299EC6C000F7C6D9 /* UIView+Extensions.swift */; };
 		FA87654D299E3FF9003F0AAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87654C299E3FF9003F0AAD /* ViewController.swift */; };
 		FA930138299D8059007F36FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA930137299D8059007F36FA /* AppDelegate.swift */; };
 		FA93013A299D8059007F36FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA930139299D8059007F36FA /* SceneDelegate.swift */; };
@@ -57,6 +59,8 @@
 		EE8303C79FF9FB60EADF570B /* Pods_Rick_Morty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rick_Morty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5EE5AF299E4D6600F7C6D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA5EE5B2299E51D200F7C6D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA5EE5B3299EC60B00F7C6D9 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		FA5EE5B6299EC6C000F7C6D9 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		FA87654C299E3FF9003F0AAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FA930134299D8059007F36FA /* Rick&Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick&Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA930137299D8059007F36FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +159,14 @@
 			path = dev;
 			sourceTree = "<group>";
 		};
+		FA5EE5B5299EC63600F7C6D9 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EE5B6299EC6C000F7C6D9 /* UIView+Extensions.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		FA876545299E3A26003F0AAD /* controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +178,8 @@
 		FA876546299E3C92003F0AAD /* common */ = {
 			isa = PBXGroup;
 			children = (
+				FA5EE5B3299EC60B00F7C6D9 /* BaseView.swift */,
+				FA5EE5B5299EC63600F7C6D9 /* extensions */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -524,8 +538,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5EE5B7299EC6C000F7C6D9 /* UIView+Extensions.swift in Sources */,
 				FA930138299D8059007F36FA /* AppDelegate.swift in Sources */,
 				FA930142299D805A007F36FA /* Rick_Morty.xcdatamodeld in Sources */,
+				FA5EE5B4299EC60B00F7C6D9 /* BaseView.swift in Sources */,
 				FA87654D299E3FF9003F0AAD /* ViewController.swift in Sources */,
 				FA93013A299D8059007F36FA /* SceneDelegate.swift in Sources */,
 			);
