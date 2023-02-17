@@ -20,6 +20,10 @@ class RegisterViewController: UIViewController {
         setup()
     }
     
+    override func viewDidLayoutSubviews() {
+        scrollView.contentInset = view.safeAreaInsets
+    }
+    
     private func setup() {
         setupView()
         setupKeyboardAvoidance()
@@ -30,8 +34,6 @@ class RegisterViewController: UIViewController {
         registrationFieldsView.delegate = self
         checkmarkTextView.delegate = self
         
-        scrollView.contentInset = view.safeAreaInsets
-        
         imageView.layer.shadowColor = UIColor.green.cgColor
         imageView.layer.shadowOffset = .zero
         imageView.layer.shadowRadius = 20
@@ -40,7 +42,7 @@ class RegisterViewController: UIViewController {
     
     private func setupKeyboardAvoidance() {
         scrollView.keyboardDismissMode = .interactive
-        
+
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
