@@ -24,30 +24,30 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="CD2-FS-2yf">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="871"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="871.33333333333337"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register.header.image" translatesAutoresizingMaskIntoConstraints="NO" id="U51-YO-sMJ">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="340.66666666666669"/>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdA-Ix-Ljg">
-                                    <rect key="frame" x="0.0" y="356.66666666666669" width="393" height="514.33333333333326"/>
+                                    <rect key="frame" x="0.0" y="356.66666666666669" width="393" height="514.66666666666652"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YI1-8h-w6c">
-                                            <rect key="frame" x="16" y="0.0" width="361" height="514.33333333333337"/>
+                                            <rect key="frame" x="16" y="0.0" width="361" height="514.66666666666663"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="qgW-ki-Dqg" customClass="RegistrationFieldsView" customModule="Rick_Morty" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="378.33333333333331"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="300"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67H-hc-I1D">
-                                                    <rect key="frame" x="0.0" y="394.33333333333331" width="361" height="50"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="PqF-1E-XyM"/>
-                                                    </constraints>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="67H-hc-I1D" customClass="CheckmarkTextView" customModule="Rick_Morty" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="315.99999999999994" width="361" height="128.66666666666669"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="I have read and agree to the privacy policy, and terms of service."/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzk-1D-al2">
-                                                    <rect key="frame" x="0.0" y="460.33333333333331" width="361" height="53.999999999999943"/>
+                                                    <rect key="frame" x="0.0" y="460.66666666666669" width="361" height="54.000000000000057"/>
                                                     <color key="backgroundColor" name="secondary"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="bzk-1D-al2" secondAttribute="height" multiplier="20:3" id="MfM-Li-VG6"/>
@@ -103,6 +103,9 @@
         </view>
     </objects>
     <designables>
+        <designable name="67H-hc-I1D">
+            <size key="intrinsicContentSize" width="361" height="50"/>
+        </designable>
         <designable name="qgW-ki-Dqg">
             <size key="intrinsicContentSize" width="361" height="300"/>
         </designable>
