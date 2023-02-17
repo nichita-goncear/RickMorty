@@ -24,7 +24,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="CD2-FS-2yf">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="871.33333333333337"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="887.33333333333337"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register.header.image" translatesAutoresizingMaskIntoConstraints="NO" id="U51-YO-sMJ">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="340.66666666666669"/>
@@ -36,11 +36,11 @@
                                             <rect key="frame" x="16" y="0.0" width="361" height="514.66666666666663"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="qgW-ki-Dqg" customClass="RegistrationFieldsView" customModule="Rick_Morty" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="300"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="372"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="67H-hc-I1D" customClass="CheckmarkTextView" customModule="Rick_Morty" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="315.99999999999994" width="361" height="128.66666666666669"/>
+                                                    <rect key="frame" x="0.0" y="387.99999999999994" width="361" height="56.666666666666686"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="I have read and agree to the privacy policy, and terms of service."/>
@@ -75,6 +75,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
+                            <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="16" right="0.0"/>
                         </stackView>
                     </subviews>
                     <constraints>
@@ -87,6 +88,7 @@
                         <constraint firstItem="CD2-FS-2yf" firstAttribute="top" secondItem="Ap1-fR-7sP" secondAttribute="top" id="pI2-MT-3rj"/>
                         <constraint firstAttribute="bottom" secondItem="CD2-FS-2yf" secondAttribute="bottom" id="vTV-cO-xyh"/>
                     </constraints>
+                    <edgeInsets key="layoutMargins" top="44" left="0.0" bottom="8" right="0.0"/>
                     <viewLayoutGuide key="contentLayoutGuide" id="zhx-AA-bcn"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="rDZ-hR-FRq"/>
                 </scrollView>

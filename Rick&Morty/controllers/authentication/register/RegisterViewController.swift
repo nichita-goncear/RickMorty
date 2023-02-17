@@ -16,7 +16,12 @@ class RegisterViewController: UIViewController {
     }
     
     private func setup() {
+        setupView()
         setupKeyboardAvoidance()
+    }
+    
+    private func setupView() {
+        scrollView.contentInset = view.safeAreaInsets
     }
     
     private func setupKeyboardAvoidance() {
