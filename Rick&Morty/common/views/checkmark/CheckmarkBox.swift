@@ -8,10 +8,16 @@
 import Foundation
 import UIKit
 
+protocol CheckmarkBoxDelegate {
+    func boxChangedState(currentState: Bool)
+}
+
 @IBDesignable
 class CheckmarkBox: UIButton {
     let checkedImage = UIImage(systemName: "checkmark.square")! as UIImage
     let uncheckedImage = UIImage(systemName: "square")! as UIImage
+    
+    var delegate: CheckmarkBoxDelegate?
     
     var isChecked: Bool = false {
         didSet {
@@ -20,6 +26,8 @@ class CheckmarkBox: UIButton {
             } else {
                 self.setImage(uncheckedImage, for: UIControl.State.normal)
             }
+            
+            self.delegate?.boxChangedState(currentState: isChecked)
         }
     }
         

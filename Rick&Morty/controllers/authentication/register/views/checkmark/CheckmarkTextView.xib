@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckmarkTextView" customModule="Rick_Morty" customModuleProvider="target">
             <connections>
+                <outlet property="checkmarkBox" destination="cgf-Le-egn" id="nil-Mb-kbx"/>
                 <outlet property="textLabel" destination="SiK-dr-wRp" id="VgS-Ff-D60"/>
             </connections>
         </placeholder>
@@ -57,7 +58,7 @@
     </designables>
     <resources>
         <namedColor name="secondary">
-            <color red="0.0" green="0.7150810957" blue="0.78020769359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.71372549019607845" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Rick_Morty" customModuleProvider="target">
             <connections>
+                <outlet property="checkmarkTextView" destination="67H-hc-I1D" id="yB0-Mj-8UQ"/>
+                <outlet property="imageView" destination="U51-YO-sMJ" id="EMR-Bj-spq"/>
+                <outlet property="registrationFieldsView" destination="qgW-ki-Dqg" id="6EJ-4U-OKE"/>
                 <outlet property="scrollView" destination="Ap1-fR-7sP" id="iii-4p-Oav"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -36,11 +39,11 @@
                                             <rect key="frame" x="16" y="0.0" width="361" height="514.66666666666663"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="qgW-ki-Dqg" customClass="RegistrationFieldsView" customModule="Rick_Morty" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="372"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="378.66666666666669"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="67H-hc-I1D" customClass="CheckmarkTextView" customModule="Rick_Morty" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="387.99999999999994" width="361" height="56.666666666666686"/>
+                                                    <rect key="frame" x="0.0" y="394.66666666666669" width="361" height="50"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="I have read and agree to the privacy policy, and terms of service."/>
@@ -62,6 +65,9 @@
                                                             <integer key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="didTapRegister:" destination="-1" eventType="touchUpInside" id="yMD-rf-2am"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -115,7 +121,7 @@
     <resources>
         <image name="register.header.image" width="1600" height="1600"/>
         <namedColor name="secondary">
-            <color red="0.0" green="0.7150810957" blue="0.78020769359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.71372549019607845" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
