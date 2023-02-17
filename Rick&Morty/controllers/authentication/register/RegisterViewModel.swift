@@ -41,7 +41,7 @@ class RegisterViewModel {
     
     // MARK: Logic
     
-    private func isValidEmail(_ email: String) -> Bool {
+    private func isValidEmail() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
@@ -60,7 +60,7 @@ class RegisterViewModel {
             return
         }
         
-        guard isValidEmail(email) else {
+        guard isValidEmail() else {
             delegate?.showEmailWrongFormatAlert()
             return 
         }

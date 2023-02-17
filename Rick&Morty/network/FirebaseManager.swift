@@ -10,11 +10,22 @@ import FirebaseAuth
 
 protocol FirebaseManagerProtocol {
     func registerWith(email: String, password: String, success: @escaping () -> (), fail: @escaping () -> ())
+    func signInWith(email: String, password: String, success: @escaping () -> (), fail: @escaping () -> ())
 }
 
 class FirebaseManager: FirebaseManagerProtocol {
     func registerWith(email: String, password: String, success: @escaping () -> (), fail: @escaping () -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { _, error in
+            guard error == nil else {
+                return fail()
+            }
+            
+            success()
+        }
+    }
+    
+    func signInWith(email: String, password: String, success: @escaping () -> (), fail: @escaping () -> ()) {
+        Auth.auth().signIn(withEmail: email, password: password) { _, error in
             guard error == nil else {
                 return fail()
             }

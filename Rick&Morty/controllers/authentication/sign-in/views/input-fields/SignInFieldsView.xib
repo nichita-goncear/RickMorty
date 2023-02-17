@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInFieldsView" customModule="Rick_Morty" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextField" destination="buZ-T8-9sq" id="Ftl-tV-pDv"/>
+                <outlet property="passwordTextField" destination="rNP-Cz-hUf" id="402-7c-wng"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="228"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YDj-9Q-lsI">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="228"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="buZ-T8-9sq" customClass="TitledTextField" customModule="Rick_Morty" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="106"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Email"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="rNP-Cz-hUf" customClass="TitledTextField" customModule="Rick_Morty" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="122" width="393" height="106"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Password"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureEntry" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="YDj-9Q-lsI" secondAttribute="trailing" id="90q-q2-dv9"/>
+                <constraint firstItem="YDj-9Q-lsI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UVB-hB-5YY"/>
+                <constraint firstAttribute="bottom" secondItem="YDj-9Q-lsI" secondAttribute="bottom" id="b4e-hz-7xi"/>
+                <constraint firstItem="YDj-9Q-lsI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wLO-wh-6Lu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="43.511450381679388" y="-200"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="buZ-T8-9sq">
+            <size key="intrinsicContentSize" width="393" height="80"/>
+        </designable>
+        <designable name="rNP-Cz-hUf">
+            <size key="intrinsicContentSize" width="393" height="80"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

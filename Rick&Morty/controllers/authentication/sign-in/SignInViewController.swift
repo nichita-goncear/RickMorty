@@ -1,23 +1,31 @@
 //
-//  RegisterViewController.swift
+//  SignInViewController.swift
 //  Rick&Morty
 //
-//  Created by Nikita Gonchar on 16.02.2023.
+//  Created by Nikita Gonchar on 17.02.2023.
 //
 
 import UIKit
 
-class RegisterViewController: UIViewController {
-    @IBOutlet weak var imageView: UIImageView!
+class SignInViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var registrationFieldsView: RegistrationFieldsView!
-    @IBOutlet weak var checkmarkTextView: CheckmarkTextView!
+    @IBOutlet weak var signInFieldsView: SignInFieldsView!
     
-    var viewModel = RegisterViewModel(firebaseManager: FirebaseManager())
+    var viewModel = SignInViewModel(firebaseManager: FirebaseManager())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
     
     private func setup() {
@@ -27,13 +35,7 @@ class RegisterViewController: UIViewController {
     
     private func setupView() {
         viewModel.delegate = self
-        registrationFieldsView.delegate = self
-        checkmarkTextView.delegate = self
-        
-        imageView.layer.shadowColor = UIColor.green.cgColor
-        imageView.layer.shadowOffset = .zero
-        imageView.layer.shadowRadius = 20
-        imageView.layer.shadowOpacity = 0.2
+        signInFieldsView.delegate = self
     }
     
     private func setupKeyboardAvoidance() {
@@ -57,14 +59,16 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func didTapRegister(_ sender: Any) {
-        viewModel.didTapRegister()
+    @IBAction func signInTapped(_ sender: Any) {
+        viewModel.didTapSignIn()
     }
     
+    @IBAction func registerTapped(_ sender: Any) {
+        viewModel.didTapRegister()
+    }
 }
 
-extension RegisterViewController: RegistrationFieldsViewDelegate {
+extension SignInViewController: SignInFieldsViewDelegate {
     func didChangeEmail(currentValue: String) {
         viewModel.email = currentValue
     }
@@ -72,40 +76,29 @@ extension RegisterViewController: RegistrationFieldsViewDelegate {
     func didChangePassword(currentValue: String) {
         viewModel.password = currentValue
     }
-    
-    func didChangePhoneNumber(currentValue: String) {
-        viewModel.phoneNumber = currentValue
-    }
 }
 
-extension RegisterViewController: RegisterViewModelDelegate {
+extension SignInViewController: SignInViewModelDelegate {
     func showEmptyFieldsAlert() {
-        presentAlert(title: "Oops..", msg: "Make sure to fill all the required fields.")
+        presentAlert(title: "Oops", msg: "Make sure to fill all the required fields.")
     }
     
     func showEmailWrongFormatAlert() {
-        presentAlert(title: "Oops..", msg: "Make sure to provide a valid email format.")
+        presentAlert(title: "Oops", msg: "Make sure to provide a valid email format.")
     }
     
-    func showPrivacyPolicyAlert() {
-        presentAlert(title: "Oops..", msg: "Make sure to check the privacy policy and service terms field.")
+    func showSignInFailure() {
+        presentAlert(title: "Oops", msg: "Sign in failed.")
     }
     
-    func showRegistrationFailedAlert() {
-        presentAlert(title: "Oops..", msg: "Registration failed.")
+    func presentRegistrationViewController() {
+        let registrationViewController = RegisterViewController()
+        navigationController?.pushViewController(registrationViewController, animated: true)
     }
     
-    func showRegistrationSuccessAlert() {
-        presentAlert(title: "Yaay", msg: "Registration complete. Tap OK to proceed to sign in screen.")
-    }
-    
-    func presentSignInController() {
-        navigationController?.popViewController(animated: true)
-    }
-}
-
-extension RegisterViewController: CheckmarkTextViewDelegate {
-    func didChangeState(currentState: Bool) {
-        viewModel.isPrivacyChecked = currentState
+    func presentHomeViewController() {
+        // TODO: Uncomment when implemented 
+//        let homeViewController = HomeViewController()
+//        navigationController?.pushViewController(homeViewController, animated: true)
     }
 }
