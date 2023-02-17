@@ -12,7 +12,13 @@
 		74EB350A54C82CE7EAD4A659 /* Pods_Rick_Morty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8303C79FF9FB60EADF570B /* Pods_Rick_Morty.framework */; };
 		FA5EE5B4299EC60B00F7C6D9 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5B3299EC60B00F7C6D9 /* BaseView.swift */; };
 		FA5EE5B7299EC6C000F7C6D9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5B6299EC6C000F7C6D9 /* UIView+Extensions.swift */; };
-		FA87654D299E3FF9003F0AAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87654C299E3FF9003F0AAD /* ViewController.swift */; };
+		FA5EE5BC299ECBCB00F7C6D9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5BA299ECBCB00F7C6D9 /* RegisterViewController.swift */; };
+		FA5EE5BD299ECBCB00F7C6D9 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EE5BB299ECBCB00F7C6D9 /* RegisterViewController.xib */; };
+		FA5EE5C0299ECD3100F7C6D9 /* TitledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5BF299ECD3100F7C6D9 /* TitledTextField.swift */; };
+		FA5EE5C2299ECD4A00F7C6D9 /* TitledTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EE5C1299ECD4A00F7C6D9 /* TitledTextField.xib */; };
+		FA5EE5C7299ECF8800F7C6D9 /* RegistrationFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5C6299ECF8800F7C6D9 /* RegistrationFieldsView.swift */; };
+		FA5EE5CB299ECFDE00F7C6D9 /* RegistrationFieldsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EE5CA299ECFDE00F7C6D9 /* RegistrationFieldsView.xib */; };
+		FA5EE5CD299EF4F400F7C6D9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5EE5CC299EF4F400F7C6D9 /* Colors.xcassets */; };
 		FA930138299D8059007F36FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA930137299D8059007F36FA /* AppDelegate.swift */; };
 		FA93013A299D8059007F36FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA930139299D8059007F36FA /* SceneDelegate.swift */; };
 		FA93013F299D8059007F36FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA93013D299D8059007F36FA /* Main.storyboard */; };
@@ -61,7 +67,13 @@
 		FA5EE5B2299E51D200F7C6D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA5EE5B3299EC60B00F7C6D9 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		FA5EE5B6299EC6C000F7C6D9 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		FA87654C299E3FF9003F0AAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA5EE5BA299ECBCB00F7C6D9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FA5EE5BB299ECBCB00F7C6D9 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		FA5EE5BF299ECD3100F7C6D9 /* TitledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledTextField.swift; sourceTree = "<group>"; };
+		FA5EE5C1299ECD4A00F7C6D9 /* TitledTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitledTextField.xib; sourceTree = "<group>"; };
+		FA5EE5C6299ECF8800F7C6D9 /* RegistrationFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFieldsView.swift; sourceTree = "<group>"; };
+		FA5EE5CA299ECFDE00F7C6D9 /* RegistrationFieldsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationFieldsView.xib; sourceTree = "<group>"; };
+		FA5EE5CC299EF4F400F7C6D9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FA930134299D8059007F36FA /* Rick&Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick&Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA930137299D8059007F36FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA930139299D8059007F36FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,10 +179,62 @@
 			path = extensions;
 			sourceTree = "<group>";
 		};
+		FA5EE5B8299ECB7300F7C6D9 /* authentication */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EE5B9299ECB7D00F7C6D9 /* register */,
+			);
+			path = authentication;
+			sourceTree = "<group>";
+		};
+		FA5EE5B9299ECB7D00F7C6D9 /* register */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EE5BA299ECBCB00F7C6D9 /* RegisterViewController.swift */,
+				FA5EE5BB299ECBCB00F7C6D9 /* RegisterViewController.xib */,
+				FA5EE5C4299ECF4800F7C6D9 /* views */,
+			);
+			path = register;
+			sourceTree = "<group>";
+		};
+		FA5EE5BE299ECCE500F7C6D9 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EE5C3299ECD5E00F7C6D9 /* titled-text-field */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FA5EE5C3299ECD5E00F7C6D9 /* titled-text-field */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EE5BF299ECD3100F7C6D9 /* TitledTextField.swift */,
+				FA5EE5C1299ECD4A00F7C6D9 /* TitledTextField.xib */,
+			);
+			path = "titled-text-field";
+			sourceTree = "<group>";
+		};
+		FA5EE5C4299ECF4800F7C6D9 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EE5C5299ECF4E00F7C6D9 /* input-fields */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FA5EE5C5299ECF4E00F7C6D9 /* input-fields */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EE5C6299ECF8800F7C6D9 /* RegistrationFieldsView.swift */,
+				FA5EE5CA299ECFDE00F7C6D9 /* RegistrationFieldsView.xib */,
+			);
+			path = "input-fields";
+			sourceTree = "<group>";
+		};
 		FA876545299E3A26003F0AAD /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA87654B299E3FD9003F0AAD /* main */,
+				FA5EE5B8299ECB7300F7C6D9 /* authentication */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -179,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				FA5EE5B3299EC60B00F7C6D9 /* BaseView.swift */,
+				FA5EE5BE299ECCE500F7C6D9 /* views */,
 				FA5EE5B5299EC63600F7C6D9 /* extensions */,
 			);
 			path = common;
@@ -188,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				FA930143299D806A007F36FA /* Assets.xcassets */,
+				FA5EE5CC299EF4F400F7C6D9 /* Colors.xcassets */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -217,14 +283,6 @@
 				FA930140299D805A007F36FA /* Rick_Morty.xcdatamodeld */,
 			);
 			path = models;
-			sourceTree = "<group>";
-		};
-		FA87654B299E3FD9003F0AAD /* main */ = {
-			isa = PBXGroup;
-			children = (
-				FA87654C299E3FF9003F0AAD /* ViewController.swift */,
-			);
-			path = main;
 			sourceTree = "<group>";
 		};
 		FA93012B299D8059007F36FA = {
@@ -392,7 +450,11 @@
 			files = (
 				FA930147299D806A007F36FA /* LaunchScreen.storyboard in Resources */,
 				FA930144299D806A007F36FA /* Assets.xcassets in Resources */,
+				FA5EE5C2299ECD4A00F7C6D9 /* TitledTextField.xib in Resources */,
 				FA93013F299D8059007F36FA /* Main.storyboard in Resources */,
+				FA5EE5CB299ECFDE00F7C6D9 /* RegistrationFieldsView.xib in Resources */,
+				FA5EE5BD299ECBCB00F7C6D9 /* RegisterViewController.xib in Resources */,
+				FA5EE5CD299EF4F400F7C6D9 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,9 +602,11 @@
 			files = (
 				FA5EE5B7299EC6C000F7C6D9 /* UIView+Extensions.swift in Sources */,
 				FA930138299D8059007F36FA /* AppDelegate.swift in Sources */,
+				FA5EE5C7299ECF8800F7C6D9 /* RegistrationFieldsView.swift in Sources */,
 				FA930142299D805A007F36FA /* Rick_Morty.xcdatamodeld in Sources */,
+				FA5EE5C0299ECD3100F7C6D9 /* TitledTextField.swift in Sources */,
+				FA5EE5BC299ECBCB00F7C6D9 /* RegisterViewController.swift in Sources */,
 				FA5EE5B4299EC60B00F7C6D9 /* BaseView.swift in Sources */,
-				FA87654D299E3FF9003F0AAD /* ViewController.swift in Sources */,
 				FA93013A299D8059007F36FA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

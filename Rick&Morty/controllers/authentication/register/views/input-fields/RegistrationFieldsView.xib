@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationFieldsView" customModule="Rick_Morty" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="339"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gED-dO-JxC">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="51"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <color key="textColor" name="text-primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hgT-ck-zjG">
+                    <rect key="frame" x="0.0" y="67" width="393" height="272"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="8di-ht-NHO" customClass="TitledTextField" customModule="Rick_Morty" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="User Name"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="3Gy-7j-Enz" customClass="TitledTextField" customModule="Rick_Morty" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="96" width="393" height="80"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Password"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="en2-Vp-U0T" customClass="TitledTextField" customModule="Rick_Morty" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="192" width="393" height="80"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Phone Number"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hgT-ck-zjG" secondAttribute="trailing" id="1FT-Nn-BUZ"/>
+                <constraint firstAttribute="trailing" secondItem="gED-dO-JxC" secondAttribute="trailing" id="6Wj-MR-fPA"/>
+                <constraint firstItem="hgT-ck-zjG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="g7c-HA-nU0"/>
+                <constraint firstItem="hgT-ck-zjG" firstAttribute="top" secondItem="gED-dO-JxC" secondAttribute="bottom" constant="16" id="kRE-Fn-0d3"/>
+                <constraint firstAttribute="bottom" secondItem="hgT-ck-zjG" secondAttribute="bottom" id="mhZ-4o-ine"/>
+                <constraint firstItem="gED-dO-JxC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="w1O-FE-74p"/>
+                <constraint firstItem="gED-dO-JxC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yzr-wZ-g5R"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-22.137404580152669" y="-175"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="3Gy-7j-Enz">
+            <size key="intrinsicContentSize" width="393" height="80"/>
+        </designable>
+        <designable name="8di-ht-NHO">
+            <size key="intrinsicContentSize" width="393" height="80"/>
+        </designable>
+        <designable name="en2-Vp-U0T">
+            <size key="intrinsicContentSize" width="393" height="80"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="text-primary">
+            <color red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
