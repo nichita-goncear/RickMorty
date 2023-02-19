@@ -30,6 +30,14 @@
 		FA5EE5E4299F9B5300F7C6D9 /* SignInFieldsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EE5E3299F9B5300F7C6D9 /* SignInFieldsView.xib */; };
 		FA5EE5E629A004BA00F7C6D9 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5E529A004BA00F7C6D9 /* SignInViewModel.swift */; };
 		FA5EE5E829A00E4700F7C6D9 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5E729A00E4700F7C6D9 /* UIViewController+Extensions.swift */; };
+		FA5EE5EC29A015C300F7C6D9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5EA29A015C300F7C6D9 /* HomeViewController.swift */; };
+		FA5EE5ED29A015C300F7C6D9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EE5EB29A015C300F7C6D9 /* HomeViewController.xib */; };
+		FA5EE5F229A016A400F7C6D9 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5F029A016A400F7C6D9 /* CharacterTableViewCell.swift */; };
+		FA5EE5F329A016A400F7C6D9 /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EE5F129A016A400F7C6D9 /* CharacterTableViewCell.xib */; };
+		FA5EE5F529A01D3D00F7C6D9 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5F429A01D3D00F7C6D9 /* CharacterModel.swift */; };
+		FA5EE5F729A0368300F7C6D9 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5F629A0368300F7C6D9 /* ServiceManager.swift */; };
+		FA5EE5F929A03AFF00F7C6D9 /* HomeApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5F829A03AFF00F7C6D9 /* HomeApiManager.swift */; };
+		FA5EE5FB29A03D3900F7C6D9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5FA29A03D3900F7C6D9 /* HomeViewModel.swift */; };
 		FA930138299D8059007F36FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA930137299D8059007F36FA /* AppDelegate.swift */; };
 		FA93013A299D8059007F36FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA930139299D8059007F36FA /* SceneDelegate.swift */; };
 		FA93013F299D8059007F36FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA93013D299D8059007F36FA /* Main.storyboard */; };
@@ -96,6 +104,14 @@
 		FA5EE5E3299F9B5300F7C6D9 /* SignInFieldsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInFieldsView.xib; sourceTree = "<group>"; };
 		FA5EE5E529A004BA00F7C6D9 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		FA5EE5E729A00E4700F7C6D9 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		FA5EE5EA29A015C300F7C6D9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FA5EE5EB29A015C300F7C6D9 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		FA5EE5F029A016A400F7C6D9 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		FA5EE5F129A016A400F7C6D9 /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
+		FA5EE5F429A01D3D00F7C6D9 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		FA5EE5F629A0368300F7C6D9 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		FA5EE5F829A03AFF00F7C6D9 /* HomeApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApiManager.swift; sourceTree = "<group>"; };
+		FA5EE5FA29A03D3900F7C6D9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FA930134299D8059007F36FA /* Rick&Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick&Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA930137299D8059007F36FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA930139299D8059007F36FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -304,10 +320,39 @@
 			path = "input-fields";
 			sourceTree = "<group>";
 		};
+		FA5EE5E929A014F300F7C6D9 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EE5EA29A015C300F7C6D9 /* HomeViewController.swift */,
+				FA5EE5EB29A015C300F7C6D9 /* HomeViewController.xib */,
+				FA5EE5FA29A03D3900F7C6D9 /* HomeViewModel.swift */,
+				FA5EE5EE29A0167C00F7C6D9 /* views */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		FA5EE5EE29A0167C00F7C6D9 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EE5EF29A0168400F7C6D9 /* character-cell */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FA5EE5EF29A0168400F7C6D9 /* character-cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EE5F029A016A400F7C6D9 /* CharacterTableViewCell.swift */,
+				FA5EE5F129A016A400F7C6D9 /* CharacterTableViewCell.xib */,
+			);
+			path = "character-cell";
+			sourceTree = "<group>";
+		};
 		FA876545299E3A26003F0AAD /* controllers */ = {
 			isa = PBXGroup;
 			children = (
 				FA5EE5B8299ECB7300F7C6D9 /* authentication */,
+				FA5EE5E929A014F300F7C6D9 /* home */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -346,6 +391,8 @@
 			isa = PBXGroup;
 			children = (
 				FA5EE5D8299F772800F7C6D9 /* FirebaseManager.swift */,
+				FA5EE5F629A0368300F7C6D9 /* ServiceManager.swift */,
+				FA5EE5F829A03AFF00F7C6D9 /* HomeApiManager.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -354,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				FA930140299D805A007F36FA /* Rick_Morty.xcdatamodeld */,
+				FA5EE5F429A01D3D00F7C6D9 /* CharacterModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -524,6 +572,7 @@
 				FA930147299D806A007F36FA /* LaunchScreen.storyboard in Resources */,
 				FA930144299D806A007F36FA /* Assets.xcassets in Resources */,
 				FA5EE5C2299ECD4A00F7C6D9 /* TitledTextField.xib in Resources */,
+				FA5EE5F329A016A400F7C6D9 /* CharacterTableViewCell.xib in Resources */,
 				FA93013F299D8059007F36FA /* Main.storyboard in Resources */,
 				FA5EE5CB299ECFDE00F7C6D9 /* RegistrationFieldsView.xib in Resources */,
 				FA5EE5E4299F9B5300F7C6D9 /* SignInFieldsView.xib in Resources */,
@@ -531,6 +580,7 @@
 				FA5EE5CD299EF4F400F7C6D9 /* Colors.xcassets in Resources */,
 				FA5EE5DE299F957200F7C6D9 /* SignInViewController.xib in Resources */,
 				FA5EE5D2299EFCD100F7C6D9 /* CheckmarkTextView.xib in Resources */,
+				FA5EE5ED29A015C300F7C6D9 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,16 +727,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5EE5D9299F772800F7C6D9 /* FirebaseManager.swift in Sources */,
+				FA5EE5FB29A03D3900F7C6D9 /* HomeViewModel.swift in Sources */,
 				FA5EE5B7299EC6C000F7C6D9 /* UIView+Extensions.swift in Sources */,
 				FA930138299D8059007F36FA /* AppDelegate.swift in Sources */,
+				FA5EE5EC29A015C300F7C6D9 /* HomeViewController.swift in Sources */,
 				FA5EE5E2299F9B4400F7C6D9 /* SignInFieldsView.swift in Sources */,
+				FA5EE5F529A01D3D00F7C6D9 /* CharacterModel.swift in Sources */,
 				FA5EE5C7299ECF8800F7C6D9 /* RegistrationFieldsView.swift in Sources */,
 				FA5EE5D5299EFE3D00F7C6D9 /* CheckmarkBox.swift in Sources */,
 				FA5EE5DD299F957200F7C6D9 /* SignInViewController.swift in Sources */,
 				FA5EE5D7299F074F00F7C6D9 /* RegisterViewModel.swift in Sources */,
 				FA930142299D805A007F36FA /* Rick_Morty.xcdatamodeld in Sources */,
 				FA5EE5C0299ECD3100F7C6D9 /* TitledTextField.swift in Sources */,
+				FA5EE5F729A0368300F7C6D9 /* ServiceManager.swift in Sources */,
+				FA5EE5F229A016A400F7C6D9 /* CharacterTableViewCell.swift in Sources */,
 				FA5EE5BC299ECBCB00F7C6D9 /* RegisterViewController.swift in Sources */,
+				FA5EE5F929A03AFF00F7C6D9 /* HomeApiManager.swift in Sources */,
 				FA5EE5B4299EC60B00F7C6D9 /* BaseView.swift in Sources */,
 				FA5EE5E829A00E4700F7C6D9 /* UIViewController+Extensions.swift in Sources */,
 				FA5EE5D0299EFCC600F7C6D9 /* CheckmarkTextView.swift in Sources */,
