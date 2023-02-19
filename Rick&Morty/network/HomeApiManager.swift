@@ -10,6 +10,7 @@ import UIKit
 
 protocol HomeApiManagerProtocol {
     func getCharacters(success: @escaping ([CharacterModel]) -> (), fail: @escaping () -> ())
+    func fetchImage(urlString: String, success: @escaping (Data) -> (), fail: @escaping () -> ())
 }
 
 class HomeApiManager: HomeApiManagerProtocol {
@@ -19,6 +20,13 @@ class HomeApiManager: HomeApiManagerProtocol {
         } fail: {
             fail()
         }
-
+    }
+    
+    func fetchImage(urlString: String, success: @escaping (Data) -> (), fail: @escaping () -> ()) {
+        ServiceManager.shared.getRequest(urlString: urlString) { (imageData: Data) in
+            success(imageData)
+        } fail: {
+            fail()
+        }
     }
 }

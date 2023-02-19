@@ -48,4 +48,8 @@ class CharacterTableViewCell: UITableViewCell {
         characterSpeciesLabel.text = model.species
         characterOriginLabel.text = model.origin.name
     }
+    
+    func setImage(_ image: UIImage) {
+        // TODO: Set imageView when finished
+    }
 }

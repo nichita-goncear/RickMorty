@@ -9,7 +9,9 @@ import Foundation
 
 protocol HomeViewModelDelegate: AnyObject {
     func showFetchFailure()
+    func showImageFetchFailure()
     func reloadTableView()
+    func reloadTableView(at indexPath: IndexPath)
 }
 
 class HomeViewModel {
@@ -27,12 +29,31 @@ class HomeViewModel {
         self.init(apiManager: apiManager, delegate: nil)
     }
     
+    private func setImageCache(imageData: Data) {
+        // TODO: Set image cache
+    }
+    
     func fetchCharacterList() {
         apiManager.getCharacters { characterList in
             self.datasource = characterList
             self.delegate?.reloadTableView()
         } fail: {
             self.delegate?.showFetchFailure()
+        }
+    }
+    
+    func cacheImageData(for indexPath: IndexPath) -> Data? {
+        // TODO: Search in cache 
+        return nil
+    }
+    
+    func fetchImage(for indexPath: IndexPath) {
+        let urlString = datasource[indexPath.row].imageUrlString
+        apiManager.fetchImage(urlString: urlString) { image in
+            // TODO: Finish after caching manager done
+            self.delegate?.reloadTableView(at: indexPath)
+        } fail: {
+            self.delegate?.showImageFetchFailure()
         }
 
     }

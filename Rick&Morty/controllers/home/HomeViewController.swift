@@ -47,11 +47,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.configure(with: viewModel.datasource[indexPath.row])
         
+        if let imageData = viewModel.cacheImageData(for: indexPath), let image = UIImage(data: imageData) {
+            cell.setImage(image)
+        } else {
+            viewModel.fetchImage(for: indexPath)
+        }
+        
         return cell
     }
 }
 
 extension HomeViewController: HomeViewModelDelegate {
+    func showImageFetchFailure() {
+        presentAlert(title: "Oops..", msg: "Couldn't load image.")
+    }
+    
     func showFetchFailure() {
         presentAlert(title: "Oops..", msg: "Couldn't load characters.")
     }
@@ -59,6 +69,12 @@ extension HomeViewController: HomeViewModelDelegate {
     func reloadTableView() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+        }
+    }
+    
+    func reloadTableView(at indexPath: IndexPath) {
+        DispatchQueue.main.async {
+            self.tableView.reloadRows(at: [indexPath], with: .automatic)
         }
     }
 }
