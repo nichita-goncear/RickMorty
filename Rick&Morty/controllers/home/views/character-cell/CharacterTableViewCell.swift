@@ -26,6 +26,10 @@ class CharacterTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    static func nib() -> UINib {
+        return UINib(nibName: "CharacterTableViewCell", bundle: nil)
+    }
+    
     private func setupView() {
         contentBackgroundView.backgroundColor = .clear
         contentBackgroundView.layer.masksToBounds = true
@@ -37,10 +41,6 @@ class CharacterTableViewCell: UITableViewCell {
         
         shadowView.backgroundColor = .white
         shadowView.layer.cornerRadius = 8
-    }
-    
-    static func nib() -> UINib {
-        return UINib(nibName: "CharacterTableViewCell", bundle: nil)
     }
     
     func configure(with model: CharacterModel) {

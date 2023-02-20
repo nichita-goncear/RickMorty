@@ -1,16 +1,16 @@
 //
-//  HomeViewController.swift
+//  CharacterDetailsViewController.swift
 //  Rick&Morty
 //
-//  Created by Nikita Gonchar on 17.02.2023.
+//  Created by Nikita Gonchar on 20.02.2023.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class CharacterDetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel = HomeViewModel(apiManager: HomeApiManager())
+    var viewModel: CharacterDetailsViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +21,9 @@ class HomeViewController: UIViewController {
         viewModel.delegate = self
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Rick and Morty"
+        navigationItem.title = viewModel.characterModel.name
         
         setupTableView()
-        viewModel.fetchCharacterList()
     }
     
     private func setupTableView() {
@@ -35,9 +34,9 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension CharacterDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.datasource.count
+        return viewModel.similarCharactersDatasource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,7 +44,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.configure(with: viewModel.datasource[indexPath.row])
+        cell.configure(with: viewModel.similarCharactersDatasource[indexPath.row])
         
         if let imageData = viewModel.cacheImageData(for: indexPath), let image = UIImage(data: imageData) {
             cell.setImage(image)
@@ -56,12 +55,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelectRow(at: indexPath)
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = CharacterHeaderView()
+
+        let characterModel = viewModel.characterModel
+
+        if let characterImageData = viewModel.cacheImageData(for: characterModel.imageUrlString), let image = UIImage(data: characterImageData) {
+            headerView.configure(with: viewModel.characterModel, image: image)
+        } else {
+            headerView.configure(with: characterModel, image: nil)
+            viewModel.fetchImage(for: characterModel.imageUrlString)
+        }
+
+        return headerView
     }
 }
 
-extension HomeViewController: HomeViewModelDelegate {
+extension CharacterDetailsViewController: CharacterDetailsViewModelDelegate {
     func showImageFetchFailure() {
         DispatchQueue.main.async {
             self.presentAlert(title: "Oops..", msg: "Couldn't load image.")
@@ -86,9 +96,13 @@ extension HomeViewController: HomeViewModelDelegate {
         }
     }
     
-    func pushDetailsViewController(with viewModel: CharacterDetailsViewModel) {
-        let characterDetailsViewController = CharacterDetailsViewController()
-        characterDetailsViewController.viewModel = viewModel
-        navigationController?.pushViewController(characterDetailsViewController, animated: true)
+    func reloadHeaderView() {
+        guard
+            let headerView = tableView.tableHeaderView as? CharacterHeaderView,
+            let characterImageData = viewModel.cacheImageData(for: viewModel.characterModel.imageUrlString),
+            let image = UIImage(data: characterImageData)
+        else { return }
+        
+        headerView.setAvatarImage(image)
     }
 }

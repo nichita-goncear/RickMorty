@@ -39,6 +39,11 @@
 		FA5EE5F929A03AFF00F7C6D9 /* HomeApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5F829A03AFF00F7C6D9 /* HomeApiManager.swift */; };
 		FA5EE5FB29A03D3900F7C6D9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5FA29A03D3900F7C6D9 /* HomeViewModel.swift */; };
 		FA5EE60029A2AB7700F7C6D9 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE5FF29A2AB7700F7C6D9 /* CacheManager.swift */; };
+		FA5EE60429A3ADA800F7C6D9 /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE60229A3ADA800F7C6D9 /* CharacterDetailsViewController.swift */; };
+		FA5EE60529A3ADA800F7C6D9 /* CharacterDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EE60329A3ADA800F7C6D9 /* CharacterDetailsViewController.xib */; };
+		FA5EE60729A3ADC500F7C6D9 /* CharacterDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE60629A3ADC500F7C6D9 /* CharacterDetailsViewModel.swift */; };
+		FA5EE60C29A3CC8D00F7C6D9 /* CharacterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE60B29A3CC8D00F7C6D9 /* CharacterHeaderView.swift */; };
+		FA5EE60E29A3CC9D00F7C6D9 /* CharacterHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5EE60D29A3CC9D00F7C6D9 /* CharacterHeaderView.xib */; };
 		FA930138299D8059007F36FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA930137299D8059007F36FA /* AppDelegate.swift */; };
 		FA93013A299D8059007F36FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA930139299D8059007F36FA /* SceneDelegate.swift */; };
 		FA93013F299D8059007F36FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA93013D299D8059007F36FA /* Main.storyboard */; };
@@ -114,6 +119,11 @@
 		FA5EE5F829A03AFF00F7C6D9 /* HomeApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApiManager.swift; sourceTree = "<group>"; };
 		FA5EE5FA29A03D3900F7C6D9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FA5EE5FF29A2AB7700F7C6D9 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		FA5EE60229A3ADA800F7C6D9 /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
+		FA5EE60329A3ADA800F7C6D9 /* CharacterDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailsViewController.xib; sourceTree = "<group>"; };
+		FA5EE60629A3ADC500F7C6D9 /* CharacterDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewModel.swift; sourceTree = "<group>"; };
+		FA5EE60B29A3CC8D00F7C6D9 /* CharacterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterHeaderView.swift; sourceTree = "<group>"; };
+		FA5EE60D29A3CC9D00F7C6D9 /* CharacterHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterHeaderView.xib; sourceTree = "<group>"; };
 		FA930134299D8059007F36FA /* Rick&Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick&Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA930137299D8059007F36FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA930139299D8059007F36FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -358,11 +368,41 @@
 			path = cache;
 			sourceTree = "<group>";
 		};
+		FA5EE60129A3AD7800F7C6D9 /* character-details */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EE60229A3ADA800F7C6D9 /* CharacterDetailsViewController.swift */,
+				FA5EE60329A3ADA800F7C6D9 /* CharacterDetailsViewController.xib */,
+				FA5EE60629A3ADC500F7C6D9 /* CharacterDetailsViewModel.swift */,
+				FA5EE60829A3ADCA00F7C6D9 /* views */,
+			);
+			path = "character-details";
+			sourceTree = "<group>";
+		};
+		FA5EE60829A3ADCA00F7C6D9 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EE60929A3ADD700F7C6D9 /* header-view */,
+				FAEE462E29A402540082013C /* header-label */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FA5EE60929A3ADD700F7C6D9 /* header-view */ = {
+			isa = PBXGroup;
+			children = (
+				FA5EE60B29A3CC8D00F7C6D9 /* CharacterHeaderView.swift */,
+				FA5EE60D29A3CC9D00F7C6D9 /* CharacterHeaderView.xib */,
+			);
+			path = "header-view";
+			sourceTree = "<group>";
+		};
 		FA876545299E3A26003F0AAD /* controllers */ = {
 			isa = PBXGroup;
 			children = (
 				FA5EE5B8299ECB7300F7C6D9 /* authentication */,
 				FA5EE5E929A014F300F7C6D9 /* home */,
+				FA5EE60129A3AD7800F7C6D9 /* character-details */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -468,6 +508,13 @@
 				FA93015D299D806B007F36FA /* Rick_MortyUITestsLaunchTests.swift */,
 			);
 			path = "Rick&MortyUITests";
+			sourceTree = "<group>";
+		};
+		FAEE462E29A402540082013C /* header-label */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "header-label";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -581,6 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA930147299D806A007F36FA /* LaunchScreen.storyboard in Resources */,
+				FA5EE60E29A3CC9D00F7C6D9 /* CharacterHeaderView.xib in Resources */,
 				FA930144299D806A007F36FA /* Assets.xcassets in Resources */,
 				FA5EE5C2299ECD4A00F7C6D9 /* TitledTextField.xib in Resources */,
 				FA5EE5F329A016A400F7C6D9 /* CharacterTableViewCell.xib in Resources */,
@@ -588,6 +636,7 @@
 				FA5EE5CB299ECFDE00F7C6D9 /* RegistrationFieldsView.xib in Resources */,
 				FA5EE5E4299F9B5300F7C6D9 /* SignInFieldsView.xib in Resources */,
 				FA5EE5BD299ECBCB00F7C6D9 /* RegisterViewController.xib in Resources */,
+				FA5EE60529A3ADA800F7C6D9 /* CharacterDetailsViewController.xib in Resources */,
 				FA5EE5CD299EF4F400F7C6D9 /* Colors.xcassets in Resources */,
 				FA5EE5DE299F957200F7C6D9 /* SignInViewController.xib in Resources */,
 				FA5EE5D2299EFCD100F7C6D9 /* CheckmarkTextView.xib in Resources */,
@@ -745,6 +794,7 @@
 				FA5EE5EC29A015C300F7C6D9 /* HomeViewController.swift in Sources */,
 				FA5EE5E2299F9B4400F7C6D9 /* SignInFieldsView.swift in Sources */,
 				FA5EE5F529A01D3D00F7C6D9 /* CharacterModel.swift in Sources */,
+				FA5EE60729A3ADC500F7C6D9 /* CharacterDetailsViewModel.swift in Sources */,
 				FA5EE5C7299ECF8800F7C6D9 /* RegistrationFieldsView.swift in Sources */,
 				FA5EE5D5299EFE3D00F7C6D9 /* CheckmarkBox.swift in Sources */,
 				FA5EE5DD299F957200F7C6D9 /* SignInViewController.swift in Sources */,
@@ -754,10 +804,12 @@
 				FA5EE5F729A0368300F7C6D9 /* ServiceManager.swift in Sources */,
 				FA5EE5F229A016A400F7C6D9 /* CharacterTableViewCell.swift in Sources */,
 				FA5EE5BC299ECBCB00F7C6D9 /* RegisterViewController.swift in Sources */,
+				FA5EE60429A3ADA800F7C6D9 /* CharacterDetailsViewController.swift in Sources */,
 				FA5EE5F929A03AFF00F7C6D9 /* HomeApiManager.swift in Sources */,
 				FA5EE5B4299EC60B00F7C6D9 /* BaseView.swift in Sources */,
 				FA5EE5E829A00E4700F7C6D9 /* UIViewController+Extensions.swift in Sources */,
 				FA5EE5D0299EFCC600F7C6D9 /* CheckmarkTextView.swift in Sources */,
+				FA5EE60C29A3CC8D00F7C6D9 /* CharacterHeaderView.swift in Sources */,
 				FA93013A299D8059007F36FA /* SceneDelegate.swift in Sources */,
 				FA5EE5E629A004BA00F7C6D9 /* SignInViewModel.swift in Sources */,
 			);

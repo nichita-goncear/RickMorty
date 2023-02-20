@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 enum CharacterStatus: String, Decodable {
-    case alive
-    case dead
-    case unknown
+    case alive = "Alive"
+    case dead = "Dead"
+    case unknown = "Unknown"
     
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
@@ -34,10 +34,16 @@ struct CharacterModel: Decodable {
     let name: String
     let status: CharacterStatus
     let origin: CharacterOriginModel
+    let location: CharacterLocationModel
     let imageUrlString: String
     let species: String
+    let gender: String
     
     struct CharacterOriginModel: Decodable {
+        let name: String
+    }
+    
+    struct CharacterLocationModel: Decodable {
         let name: String
     }
     
@@ -45,7 +51,9 @@ struct CharacterModel: Decodable {
         case name
         case status
         case origin
+        case location
         case imageUrlString = "image"
         case species
+        case gender
     }
 }

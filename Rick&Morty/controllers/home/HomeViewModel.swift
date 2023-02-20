@@ -12,6 +12,8 @@ protocol HomeViewModelDelegate: AnyObject {
     func showImageFetchFailure()
     func reloadTableView()
     func reloadTableView(at indexPath: IndexPath)
+    
+    func pushDetailsViewController(with viewModel: CharacterDetailsViewModel)
 }
 
 class HomeViewModel {
@@ -54,5 +56,20 @@ class HomeViewModel {
             self.delegate?.showImageFetchFailure()
         }
 
+    }
+    
+    // MARK: Presentation
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        let characterModel = datasource[indexPath.row]
+        let charactersWithSameOrigin = datasource.filter { $0.origin.name == characterModel.origin.name && $0.name != characterModel.name }
+        
+        let characterDetailsViewModel = CharacterDetailsViewModel(
+            characterModel: characterModel,
+            similarCharactersDatasource: charactersWithSameOrigin,
+            apiManager: apiManager,
+            cacheManager: cacheManager)
+        
+        delegate?.pushDetailsViewController(with: characterDetailsViewModel)
     }
 }

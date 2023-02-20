@@ -8,9 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Rick_Morty" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterDetailsViewController" customModule="Rick_Morty" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="bmG-iQ-T1w" id="PeW-TK-sx6"/>
+                <outlet property="tableView" destination="A7i-LJ-CA6" id="m6G-gl-9DD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bmG-iQ-T1w">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="A7i-LJ-CA6">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
@@ -27,12 +27,12 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="bmG-iQ-T1w" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IPx-zn-51U"/>
-                <constraint firstAttribute="bottom" secondItem="bmG-iQ-T1w" secondAttribute="bottom" id="O3u-Aa-Ywq"/>
-                <constraint firstItem="bmG-iQ-T1w" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Vfk-rI-egx"/>
-                <constraint firstAttribute="trailing" secondItem="bmG-iQ-T1w" secondAttribute="trailing" id="gpp-Ju-KES"/>
+                <constraint firstItem="A7i-LJ-CA6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2ds-5d-lGa"/>
+                <constraint firstItem="A7i-LJ-CA6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8Wa-ts-RU2"/>
+                <constraint firstAttribute="bottom" secondItem="A7i-LJ-CA6" secondAttribute="bottom" id="DoJ-6M-MUV"/>
+                <constraint firstItem="A7i-LJ-CA6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Gub-kV-AeU"/>
             </constraints>
-            <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
+            <point key="canvasLocation" x="9.9236641221374047" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
