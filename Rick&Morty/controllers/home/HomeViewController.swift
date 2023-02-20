@@ -59,11 +59,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeViewController: HomeViewModelDelegate {
     func showImageFetchFailure() {
-        presentAlert(title: "Oops..", msg: "Couldn't load image.")
+        DispatchQueue.main.async {
+            self.presentAlert(title: "Oops..", msg: "Couldn't load image.")
+        }
     }
     
     func showFetchFailure() {
-        presentAlert(title: "Oops..", msg: "Couldn't load characters.")
+        DispatchQueue.main.async {
+            self.presentAlert(title: "Oops..", msg: "Couldn't load characters.")
+        }
     }
     
     func reloadTableView() {

@@ -19,18 +19,16 @@ class HomeViewModel {
     
     var delegate: HomeViewModelDelegate?
     var apiManager: HomeApiManagerProtocol
+    var cacheManager: CacheManager
     
     init(apiManager: HomeApiManagerProtocol, delegate: HomeViewModelDelegate? = nil) {
         self.delegate = delegate
         self.apiManager = apiManager
+        self.cacheManager = CacheManager()
     }
     
     convenience init(apiManager: HomeApiManagerProtocol) {
         self.init(apiManager: apiManager, delegate: nil)
-    }
-    
-    private func setImageCache(imageData: Data) {
-        // TODO: Set image cache
     }
     
     func fetchCharacterList() {
@@ -43,14 +41,14 @@ class HomeViewModel {
     }
     
     func cacheImageData(for indexPath: IndexPath) -> Data? {
-        // TODO: Search in cache 
-        return nil
+        let imageUrlString = datasource[indexPath.row].imageUrlString
+        return cacheManager.getImageData(urlString: imageUrlString)
     }
     
     func fetchImage(for indexPath: IndexPath) {
         let urlString = datasource[indexPath.row].imageUrlString
-        apiManager.fetchImage(urlString: urlString) { image in
-            // TODO: Finish after caching manager done
+        apiManager.fetchImage(urlString: urlString) { imageData in
+            self.cacheManager.insertImageData(imageData, urlString: urlString)
             self.delegate?.reloadTableView(at: indexPath)
         } fail: {
             self.delegate?.showImageFetchFailure()

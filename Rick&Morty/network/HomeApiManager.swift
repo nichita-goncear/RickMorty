@@ -23,7 +23,7 @@ class HomeApiManager: HomeApiManagerProtocol {
     }
     
     func fetchImage(urlString: String, success: @escaping (Data) -> (), fail: @escaping () -> ()) {
-        ServiceManager.shared.getRequest(urlString: urlString) { (imageData: Data) in
+        ServiceManager.shared.getData(urlString: urlString) { (imageData: Data) in
             success(imageData)
         } fail: {
             fail()
