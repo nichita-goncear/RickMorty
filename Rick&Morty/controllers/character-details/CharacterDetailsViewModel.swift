@@ -13,6 +13,8 @@ protocol CharacterDetailsViewModelDelegate {
     func reloadTableView()
     func reloadTableView(at indexPath: IndexPath)
     func reloadHeaderView()
+    func pushDetailsViewController(with viewModel: CharacterDetailsViewModel)
+    func popToHomeViewController()
 }
 
 class CharacterDetailsViewModel {
@@ -56,5 +58,22 @@ class CharacterDetailsViewModel {
         } fail: {
             self.delegate?.showImageFetchFailure()
         }
+    }
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        let characterModel = similarCharactersDatasource[indexPath.row]
+        let charactersWithSameOrigin = similarCharactersDatasource.filter { $0.origin.name == characterModel.origin.name }
+        
+        let characterDetailsViewModel = CharacterDetailsViewModel(
+            characterModel: characterModel,
+            similarCharactersDatasource: charactersWithSameOrigin,
+            apiManager: apiManager,
+            cacheManager: cacheManager)
+        
+        delegate?.pushDetailsViewController(with: characterDetailsViewModel)
+    }
+    
+    func backButtonTapped() {
+        delegate?.popToHomeViewController()
     }
 }

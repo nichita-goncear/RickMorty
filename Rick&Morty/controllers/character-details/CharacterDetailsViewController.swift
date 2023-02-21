@@ -24,6 +24,14 @@ class CharacterDetailsViewController: UIViewController {
         navigationItem.title = viewModel.characterModel.name
         
         setupTableView()
+        setupBackButton()
+    }
+    
+    private func setupBackButton() {
+        let newBackButton = UIBarButtonItem(title: "Home", style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonTapped))
+        
+        navigationItem.hidesBackButton = true
+        navigationItem.leftBarButtonItem = newBackButton
     }
     
     private func setupTableView() {
@@ -31,6 +39,10 @@ class CharacterDetailsViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(CharacterTableViewCell.nib(), forCellReuseIdentifier: CharacterTableViewCell.identifier)
+    }
+    
+    @objc private func backButtonTapped() {
+        viewModel.backButtonTapped()
     }
 }
 
@@ -69,6 +81,10 @@ extension CharacterDetailsViewController: UITableViewDelegate, UITableViewDataSo
 
         return headerView
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectRow(at: indexPath)
+    }
 }
 
 extension CharacterDetailsViewController: CharacterDetailsViewModelDelegate {
@@ -104,5 +120,19 @@ extension CharacterDetailsViewController: CharacterDetailsViewModelDelegate {
         else { return }
         
         headerView.setAvatarImage(image)
+    }
+    
+    func pushDetailsViewController(with viewModel: CharacterDetailsViewModel) {
+        let characterDetailsViewController = CharacterDetailsViewController()
+        characterDetailsViewController.viewModel = viewModel
+        navigationController?.pushViewController(characterDetailsViewController, animated: true)
+    }
+    
+    func popToHomeViewController() {
+        for controller in navigationController?.viewControllers ?? [] {
+            if let homeVC = controller as? HomeViewController {
+                navigationController?.popToViewController(homeVC, animated: true)
+            }
+        }
     }
 }
