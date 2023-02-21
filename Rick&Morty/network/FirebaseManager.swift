@@ -31,6 +31,8 @@ class FirebaseManager: FirebaseManagerProtocol {
                 return fail()
             }
             
+            UserDefaults.standard.set(true, forKey: "isSignedIn")
+            
             success()
         }
     }
@@ -38,6 +40,9 @@ class FirebaseManager: FirebaseManagerProtocol {
     func logOut(success: @escaping () -> (), fail: @escaping () -> ()) {
         do {
             try Auth.auth().signOut()
+            
+            UserDefaults.standard.set(false, forKey: "isSignedIn")
+            
             return success()
         } catch {
             return fail()

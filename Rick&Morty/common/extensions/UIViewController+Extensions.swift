@@ -8,12 +8,14 @@
 import Foundation
 import UIKit
 
-extension UIViewController {
-    func presentAlert(title: String, msg: String) {
+extension UIViewController {    
+    func presentAlert(title: String, msg: String, completion: (() -> ())? = nil) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        let okAlertAction = UIAlertAction(title: "Ok", style: .default)
+        let okAlertAction = UIAlertAction(title: "Ok", style: .default) { _ in
+            completion?()
+        }
         alert.addAction(okAlertAction)
         
-        present(alert, animated: true)
+        present(alert, animated: true, completion: completion)
     }
 }

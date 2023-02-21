@@ -97,8 +97,9 @@ extension SignInViewController: SignInViewModelDelegate {
     }
     
     func presentHomeViewController() {
-        // TODO: Uncomment when implemented 
-//        let homeViewController = HomeViewController()
-//        navigationController?.pushViewController(homeViewController, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeNavController = storyboard.instantiateViewController(identifier: "HomeNavigationController")
+        
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(homeNavController)
     }
 }

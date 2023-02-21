@@ -96,7 +96,7 @@ extension RegisterViewController: RegisterViewModelDelegate {
     }
     
     func showRegistrationSuccessAlert() {
-        presentAlert(title: "Yaay", msg: "Registration complete. Tap OK to proceed to sign in screen.")
+        presentAlert(title: "Yaay", msg: "Registration complete. Tap OK to proceed to sign in screen.", completion: presentSignInController)
     }
     
     func presentSignInController() {

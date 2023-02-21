@@ -68,7 +68,7 @@ extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDat
         return 16
     }
     
-    @IBAction func didTapRegister(_ sender: Any) {
+    @IBAction func didTapLogout(_ sender: Any) {
         viewModel.didTapLogOut()
     }
 }
@@ -93,6 +93,9 @@ extension FavoritesViewController: FavoritesViewModelDelegate {
     }
     
     func presentSignInController() {
-        // TODO: Presentation 
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let signInNavController = storyboard.instantiateViewController(identifier: "SignInNavigationController")
+        
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(signInNavController)
     }
 }
