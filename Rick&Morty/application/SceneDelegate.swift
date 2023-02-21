@@ -22,11 +22,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if UserDefaults.standard.bool(forKey: "isSignedIn") {
-            let homeTabBarController = storyboard.instantiateViewController(identifier: "SignInNavigationController")
+        if UserDefaults.standard.bool(forKey: "isSignedIn") == true {
+            let homeTabBarController = storyboard.instantiateViewController(identifier: "HomeNavigationController")
             changeRootViewController(homeTabBarController)
         } else {
-            let signInNavController = storyboard.instantiateViewController(identifier: "HomeNavigationController")
+            let signInNavController = storyboard.instantiateViewController(identifier: "SignInNavigationController")
             changeRootViewController(signInNavController)
         }
         

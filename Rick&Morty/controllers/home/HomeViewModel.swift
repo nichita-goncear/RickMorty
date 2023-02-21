@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import Network
 
 protocol HomeViewModelDelegate: AnyObject {
     func showFetchFailure()
     func showImageFetchFailure()
+    func showNetworkFailure()
     func reloadTableView()
     func reloadTableView(at indexPath: IndexPath)
     
@@ -22,11 +24,13 @@ class HomeViewModel {
     var delegate: HomeViewModelDelegate?
     var apiManager: HomeApiManagerProtocol
     var cacheManager: CacheManager
+    var networkManager: NetworkManager
     
     init(apiManager: HomeApiManagerProtocol, delegate: HomeViewModelDelegate? = nil) {
         self.delegate = delegate
         self.apiManager = apiManager
         self.cacheManager = CacheManager()
+        self.networkManager = NetworkManager()
     }
     
     convenience init(apiManager: HomeApiManagerProtocol) {
@@ -56,6 +60,17 @@ class HomeViewModel {
             self.delegate?.showImageFetchFailure()
         }
 
+    }
+    
+    func setupNetworkAlert() {
+        networkManager.monitor.pathUpdateHandler = { path in
+           if path.status != .satisfied {
+               self.delegate?.showNetworkFailure()
+           }
+        }
+        
+        let queue = DispatchQueue(label: "NetworkManager")
+        networkManager.monitor.start(queue: queue)
     }
     
     // MARK: Presentation

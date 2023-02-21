@@ -20,11 +20,13 @@ class HomeViewController: UIViewController {
     private func setup() {
         viewModel.delegate = self
         
+        setupTableView()
+        
+        viewModel.setupNetworkAlert()
+        viewModel.fetchCharacterList()
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Rick and Morty"
-        
-        setupTableView()
-        viewModel.fetchCharacterList()
     }
     
     private func setupTableView() {
@@ -90,5 +92,11 @@ extension HomeViewController: HomeViewModelDelegate {
         let characterDetailsViewController = CharacterDetailsViewController()
         characterDetailsViewController.viewModel = viewModel
         navigationController?.pushViewController(characterDetailsViewController, animated: true)
+    }
+    
+    func showNetworkFailure() {
+        DispatchQueue.main.async {
+            self.presentAlert(title: "Oops..", msg: "Couldn't connect to network.")
+        }
     }
 }
