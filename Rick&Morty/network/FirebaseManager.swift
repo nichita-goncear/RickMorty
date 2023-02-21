@@ -11,6 +11,7 @@ import FirebaseAuth
 protocol FirebaseManagerProtocol {
     func registerWith(email: String, password: String, success: @escaping () -> (), fail: @escaping () -> ())
     func signInWith(email: String, password: String, success: @escaping () -> (), fail: @escaping () -> ())
+    func logOut(success: @escaping () -> (), fail: @escaping () -> ())
 }
 
 class FirebaseManager: FirebaseManagerProtocol {
@@ -31,6 +32,15 @@ class FirebaseManager: FirebaseManagerProtocol {
             }
             
             success()
+        }
+    }
+    
+    func logOut(success: @escaping () -> (), fail: @escaping () -> ()) {
+        do {
+            try Auth.auth().signOut()
+            return success()
+        } catch {
+            return fail()
         }
     }
 }

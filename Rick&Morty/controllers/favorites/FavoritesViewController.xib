@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoritesViewController" customModule="Rick_Morty" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="wyP-ds-xNs" id="jhV-Rt-jGD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wyP-ds-xNs">
+                    <rect key="frame" x="0.0" y="186.66666666666669" width="393" height="665.33333333333326"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bjn-9X-rSQ">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DM3-dv-ZaH">
+                    <rect key="frame" x="0.0" y="59.000000000000007" width="393" height="127.66666666666669"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Profile info]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rU2-C7-1uQ">
+                            <rect key="frame" x="149.66666666666666" y="53.333333333333329" width="94" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="rU2-C7-1uQ" firstAttribute="centerY" secondItem="DM3-dv-ZaH" secondAttribute="centerY" id="NwP-D5-BDs"/>
+                        <constraint firstItem="rU2-C7-1uQ" firstAttribute="centerX" secondItem="DM3-dv-ZaH" secondAttribute="centerX" id="iK9-oo-3n6"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0i9-oQ-9Nb">
+                    <rect key="frame" x="16" y="756" width="361" height="54"/>
+                    <color key="backgroundColor" red="1" green="0.42414960270000002" blue="0.2734590173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="0i9-oQ-9Nb" secondAttribute="height" multiplier="20:3" id="jjM-An-3Jf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Log Out">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="DM3-dv-ZaH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="56m-nR-PT8"/>
+                <constraint firstAttribute="bottom" secondItem="wyP-ds-xNs" secondAttribute="bottom" id="734-m9-vZz"/>
+                <constraint firstItem="0i9-oQ-9Nb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="A9u-wv-Vne"/>
+                <constraint firstItem="wyP-ds-xNs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ez0-7W-5R5"/>
+                <constraint firstAttribute="trailing" secondItem="wyP-ds-xNs" secondAttribute="trailing" id="WVB-Q0-Dhy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0i9-oQ-9Nb" secondAttribute="bottom" constant="8" id="agT-uO-zoW"/>
+                <constraint firstItem="wyP-ds-xNs" firstAttribute="top" secondItem="DM3-dv-ZaH" secondAttribute="bottom" id="hZu-H9-1QS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0i9-oQ-9Nb" secondAttribute="trailing" constant="16" id="mMa-xo-y2s"/>
+                <constraint firstItem="DM3-dv-ZaH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nLI-Hc-egC"/>
+                <constraint firstItem="DM3-dv-ZaH" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="pbB-NY-EkJ"/>
+                <constraint firstAttribute="trailing" secondItem="DM3-dv-ZaH" secondAttribute="trailing" id="xMm-Ng-Rle"/>
+            </constraints>
+            <point key="canvasLocation" x="-51.145038167938928" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

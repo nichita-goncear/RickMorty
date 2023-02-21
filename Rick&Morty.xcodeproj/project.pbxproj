@@ -53,6 +53,11 @@
 		FA930152299D806B007F36FA /* Rick_MortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA930151299D806B007F36FA /* Rick_MortyTests.swift */; };
 		FA93015C299D806B007F36FA /* Rick_MortyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93015B299D806B007F36FA /* Rick_MortyUITests.swift */; };
 		FA93015E299D806B007F36FA /* Rick_MortyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93015D299D806B007F36FA /* Rick_MortyUITestsLaunchTests.swift */; };
+		FAEE463229A405420082013C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE463029A405420082013C /* FavoritesViewController.swift */; };
+		FAEE463329A405420082013C /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEE463129A405420082013C /* FavoritesViewController.xib */; };
+		FAEE463529A4055F0082013C /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE463429A4055F0082013C /* FavoritesViewModel.swift */; };
+		FAEE463A29A407B80082013C /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE463829A407B80082013C /* CharacterCollectionViewCell.swift */; };
+		FAEE463B29A407B80082013C /* CharacterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEE463929A407B80082013C /* CharacterCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +142,11 @@
 		FA930157299D806B007F36FA /* Rick&MortyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick&MortyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA93015B299D806B007F36FA /* Rick_MortyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_MortyUITests.swift; sourceTree = "<group>"; };
 		FA93015D299D806B007F36FA /* Rick_MortyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_MortyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FAEE463029A405420082013C /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		FAEE463129A405420082013C /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		FAEE463429A4055F0082013C /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		FAEE463829A407B80082013C /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAEE463929A407B80082013C /* CharacterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,6 +413,7 @@
 				FA5EE5B8299ECB7300F7C6D9 /* authentication */,
 				FA5EE5E929A014F300F7C6D9 /* home */,
 				FA5EE60129A3AD7800F7C6D9 /* character-details */,
+				FAEE462F29A405000082013C /* favorites */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -515,6 +526,34 @@
 			children = (
 			);
 			path = "header-label";
+			sourceTree = "<group>";
+		};
+		FAEE462F29A405000082013C /* favorites */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE463029A405420082013C /* FavoritesViewController.swift */,
+				FAEE463129A405420082013C /* FavoritesViewController.xib */,
+				FAEE463429A4055F0082013C /* FavoritesViewModel.swift */,
+				FAEE463629A405650082013C /* views */,
+			);
+			path = favorites;
+			sourceTree = "<group>";
+		};
+		FAEE463629A405650082013C /* views */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE463729A4057D0082013C /* character-collection-cell */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FAEE463729A4057D0082013C /* character-collection-cell */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE463829A407B80082013C /* CharacterCollectionViewCell.swift */,
+				FAEE463929A407B80082013C /* CharacterCollectionViewCell.xib */,
+			);
+			path = "character-collection-cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -631,6 +670,7 @@
 				FA5EE60E29A3CC9D00F7C6D9 /* CharacterHeaderView.xib in Resources */,
 				FA930144299D806A007F36FA /* Assets.xcassets in Resources */,
 				FA5EE5C2299ECD4A00F7C6D9 /* TitledTextField.xib in Resources */,
+				FAEE463B29A407B80082013C /* CharacterCollectionViewCell.xib in Resources */,
 				FA5EE5F329A016A400F7C6D9 /* CharacterTableViewCell.xib in Resources */,
 				FA93013F299D8059007F36FA /* Main.storyboard in Resources */,
 				FA5EE5CB299ECFDE00F7C6D9 /* RegistrationFieldsView.xib in Resources */,
@@ -640,6 +680,7 @@
 				FA5EE5CD299EF4F400F7C6D9 /* Colors.xcassets in Resources */,
 				FA5EE5DE299F957200F7C6D9 /* SignInViewController.xib in Resources */,
 				FA5EE5D2299EFCD100F7C6D9 /* CheckmarkTextView.xib in Resources */,
+				FAEE463329A405420082013C /* FavoritesViewController.xib in Resources */,
 				FA5EE5ED29A015C300F7C6D9 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -787,6 +828,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5EE5D9299F772800F7C6D9 /* FirebaseManager.swift in Sources */,
+				FAEE463229A405420082013C /* FavoritesViewController.swift in Sources */,
 				FA5EE5FB29A03D3900F7C6D9 /* HomeViewModel.swift in Sources */,
 				FA5EE5B7299EC6C000F7C6D9 /* UIView+Extensions.swift in Sources */,
 				FA930138299D8059007F36FA /* AppDelegate.swift in Sources */,
@@ -802,11 +844,13 @@
 				FA930142299D805A007F36FA /* Rick_Morty.xcdatamodeld in Sources */,
 				FA5EE5C0299ECD3100F7C6D9 /* TitledTextField.swift in Sources */,
 				FA5EE5F729A0368300F7C6D9 /* ServiceManager.swift in Sources */,
+				FAEE463A29A407B80082013C /* CharacterCollectionViewCell.swift in Sources */,
 				FA5EE5F229A016A400F7C6D9 /* CharacterTableViewCell.swift in Sources */,
 				FA5EE5BC299ECBCB00F7C6D9 /* RegisterViewController.swift in Sources */,
 				FA5EE60429A3ADA800F7C6D9 /* CharacterDetailsViewController.swift in Sources */,
 				FA5EE5F929A03AFF00F7C6D9 /* HomeApiManager.swift in Sources */,
 				FA5EE5B4299EC60B00F7C6D9 /* BaseView.swift in Sources */,
+				FAEE463529A4055F0082013C /* FavoritesViewModel.swift in Sources */,
 				FA5EE5E829A00E4700F7C6D9 /* UIViewController+Extensions.swift in Sources */,
 				FA5EE5D0299EFCC600F7C6D9 /* CheckmarkTextView.swift in Sources */,
 				FA5EE60C29A3CC8D00F7C6D9 /* CharacterHeaderView.swift in Sources */,
