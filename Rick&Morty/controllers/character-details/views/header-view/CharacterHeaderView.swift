@@ -18,18 +18,14 @@ class CharacterHeaderView: BaseView {
     @IBOutlet weak var statusValueLabel: UILabel!
     @IBOutlet weak var statusIndicatorImageView: UIImageView!
     
+    @IBOutlet weak var sectionTitleLabel: UILabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    private func commonInit() {
-        // TODO: Corner Radius + Shadows
     }
     
     func configure(with model: CharacterModel, image: UIImage?) {
@@ -38,6 +34,7 @@ class CharacterHeaderView: BaseView {
         locationValueLabel.text = model.location.name
         genderValueLabel.text = model.gender
         statusValueLabel.text = model.status.rawValue
+        sectionTitleLabel.text = "Also from \(model.origin.name)"
         
         switch model.status {
         case .alive:

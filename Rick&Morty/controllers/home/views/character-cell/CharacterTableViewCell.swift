@@ -8,6 +8,7 @@
 import UIKit
 
 class CharacterTableViewCell: UITableViewCell {
+    @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var characterSpeciesLabel: UILabel!
     @IBOutlet weak var characterOriginLabel: UILabel!
@@ -33,6 +34,7 @@ class CharacterTableViewCell: UITableViewCell {
     private func setupView() {
         contentBackgroundView.backgroundColor = .clear
         contentBackgroundView.layer.masksToBounds = true
+        contentBackgroundView.layer.cornerRadius = 8
         
         shadowView.layer.shadowOpacity = 0.08
         shadowView.layer.shadowRadius = 5
@@ -50,6 +52,6 @@ class CharacterTableViewCell: UITableViewCell {
     }
     
     func setImage(_ image: UIImage) {
-        // TODO: Set imageView when finished
+        characterImageView.image = image
     }
 }
