@@ -10,6 +10,7 @@ import UIKit
 class FavoritesViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var userHeaderView: UserProfileView!
     
     var viewModel = FavoritesViewModel(apiManager: HomeApiManager(), firebaseManager: FirebaseManager())
 
@@ -26,6 +27,7 @@ class FavoritesViewController: UIViewController {
         
         setupCollectionView()
         viewModel.loadFavoriteCharacters()
+        viewModel.loadUserProfile()
     }
     
     private func setupCollectionView() {
@@ -90,6 +92,10 @@ extension FavoritesViewController: FavoritesViewModelDelegate {
         DispatchQueue.main.async {
             self.collectionView.reloadItems(at: [indexPath])
         }
+    }
+    
+    func configureUserHeaderView(with model: UserModel) {
+        userHeaderView.configure(with: model)
     }
     
     func presentSignInController() {

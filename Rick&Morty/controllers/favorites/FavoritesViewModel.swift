@@ -11,6 +11,7 @@ protocol FavoritesViewModelDelegate: AnyObject {
     func showLogOutFailure()
     func showImageFetchFailure()
     func reloadCollectionView(at indexPath: IndexPath)
+    func configureUserHeaderView(with model: UserModel)
     func presentSignInController()
 }
 
@@ -36,6 +37,12 @@ class FavoritesViewModel {
         self.apiManager = apiManager
         self.firebaseManager = firebaseManager
         self.cacheManager = CacheManager()
+    }
+    
+    func loadUserProfile() {
+        // TODO: Request from coreDataManager
+        let userProfile = UserModel(fullName: "John Citizen Jr.", phoneNumber: "+31 62 675 6111")
+        delegate?.configureUserHeaderView(with: userProfile)
     }
     
     func loadFavoriteCharacters() {

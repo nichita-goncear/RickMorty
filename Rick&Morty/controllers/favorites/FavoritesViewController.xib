@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoritesViewController" customModule="Rick_Morty" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="wyP-ds-xNs" id="jhV-Rt-jGD"/>
+                <outlet property="userHeaderView" destination="DM3-dv-ZaH" id="1Dc-eA-m5N"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,21 +31,9 @@
                         <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DM3-dv-ZaH">
-                    <rect key="frame" x="0.0" y="59.000000000000007" width="393" height="127.66666666666669"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Profile info]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rU2-C7-1uQ">
-                            <rect key="frame" x="149.66666666666666" y="53.333333333333329" width="94" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="rU2-C7-1uQ" firstAttribute="centerY" secondItem="DM3-dv-ZaH" secondAttribute="centerY" id="NwP-D5-BDs"/>
-                        <constraint firstItem="rU2-C7-1uQ" firstAttribute="centerX" secondItem="DM3-dv-ZaH" secondAttribute="centerX" id="iK9-oo-3n6"/>
-                    </constraints>
+                <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="127.66666666666669" translatesAutoresizingMaskIntoConstraints="NO" id="DM3-dv-ZaH" customClass="UserProfileView" customModule="Rick_Morty" customModuleProvider="target">
+                    <rect key="frame" x="8" y="59.000000000000007" width="377" height="127.66666666666669"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0i9-oQ-9Nb">
                     <rect key="frame" x="16" y="756" width="361" height="54"/>
@@ -77,13 +67,18 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0i9-oQ-9Nb" secondAttribute="bottom" constant="8" id="agT-uO-zoW"/>
                 <constraint firstItem="wyP-ds-xNs" firstAttribute="top" secondItem="DM3-dv-ZaH" secondAttribute="bottom" id="hZu-H9-1QS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0i9-oQ-9Nb" secondAttribute="trailing" constant="16" id="mMa-xo-y2s"/>
-                <constraint firstItem="DM3-dv-ZaH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nLI-Hc-egC"/>
+                <constraint firstItem="DM3-dv-ZaH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="nLI-Hc-egC"/>
                 <constraint firstItem="DM3-dv-ZaH" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="pbB-NY-EkJ"/>
-                <constraint firstAttribute="trailing" secondItem="DM3-dv-ZaH" secondAttribute="trailing" id="xMm-Ng-Rle"/>
+                <constraint firstAttribute="trailing" secondItem="DM3-dv-ZaH" secondAttribute="trailing" constant="8" id="xMm-Ng-Rle"/>
             </constraints>
             <point key="canvasLocation" x="-51.145038167938928" y="19.718309859154932"/>
         </view>
     </objects>
+    <designables>
+        <designable name="DM3-dv-ZaH">
+            <size key="intrinsicContentSize" width="393" height="127.66666666666669"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

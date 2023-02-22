@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserProfileView" customModule="Rick_Morty" customModuleProvider="target">
+            <connections>
+                <outlet property="editButton" destination="dXa-yK-kKg" id="Z4t-ID-nrg"/>
+                <outlet property="fullNameLabel" destination="zcs-Hi-APp" id="Mrp-jw-yeV"/>
+                <outlet property="imageView" destination="Alk-dE-Gka" id="aFK-VW-Bh3"/>
+                <outlet property="phoneNumberLabel" destination="gWU-Oy-ReA" id="4vU-K7-N37"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="507" height="106"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign.in.header" translatesAutoresizingMaskIntoConstraints="NO" id="Alk-dE-Gka">
+                    <rect key="frame" x="0.0" y="13" width="80" height="80"/>
+                    <color key="tintColor" name="primary"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="RgL-1h-kBv"/>
+                        <constraint firstAttribute="width" secondItem="Alk-dE-Gka" secondAttribute="height" multiplier="1:1" id="bdT-0f-mMc"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PUc-UR-cPj">
+                    <rect key="frame" x="88" y="27.000000000000004" width="281" height="52.333333333333343"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Citizen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zcs-Hi-APp">
+                            <rect key="frame" x="0.0" y="0.0" width="116.66666666666667" height="24"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" name="text-primary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+31 6 26 756111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gWU-Oy-ReA">
+                            <rect key="frame" x="0.0" y="32" width="123.66666666666667" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXa-yK-kKg">
+                    <rect key="frame" x="385" y="36" width="106" height="34.333333333333343"/>
+                    <color key="backgroundColor" name="primary"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Edit Profile">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="dXa-yK-kKg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="2gc-8A-5N0"/>
+                <constraint firstItem="PUc-UR-cPj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Eix-Sj-b3R"/>
+                <constraint firstItem="Alk-dE-Gka" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HC0-hs-niI"/>
+                <constraint firstItem="dXa-yK-kKg" firstAttribute="leading" secondItem="PUc-UR-cPj" secondAttribute="trailing" constant="16" id="Hhi-WQ-IDO"/>
+                <constraint firstItem="Alk-dE-Gka" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eoF-UJ-gH5"/>
+                <constraint firstAttribute="trailing" secondItem="dXa-yK-kKg" secondAttribute="trailing" constant="16" id="saY-yj-xRr"/>
+                <constraint firstItem="PUc-UR-cPj" firstAttribute="leading" secondItem="Alk-dE-Gka" secondAttribute="trailing" constant="8" id="uWn-08-juR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="101.5267175572519" y="-242.95774647887325"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="sign.in.header" width="1200" height="900"/>
+        <namedColor name="primary">
+            <color red="1" green="0.57647058823529407" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text-primary">
+            <color red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
