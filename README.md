@@ -1,4 +1,4 @@
-The purpose of this project is to showcase various skills in iOS development through a demo app. It includes an authentication flow that allows users to sign in or register, and the main screen presents a list of characters from the Rick and Morty cartoon.
+The purpose of this project is to showcase various skills in iOS development through a demo app. It includes an authentication flow that allows users to sign in or register, and the main screen presents a list of characters from the Rick and Morty cartoon. The current project is still **in development**, watch the 'To be added' section for upcoming features and improvements. 
 
 ## Initial constraints that were established for the project:
 
@@ -17,3 +17,26 @@ The purpose of this project is to showcase various skills in iOS development thr
   <img src="https://i.ibb.co/sJjnGff/Untitled.png" width="500" />
   <img src="https://i.ibb.co/9vW10jp/Untitled-2.png" width="500"/> 
 </p>
+
+## Implemented: 
+
+1. Prod and Dev invironments.
+2. MVVM architecture.
+3. NSCache manager to cache images. 
+4. Firebase authentication with reference to respective cluster: prod/dev
+
+## To be added: 
+
+### CoreData
+1. CoreData to store the user profile in local memory. 
+2. Add favorite characters to CoreData.
+3. Substitute mock characters on the FavoritesViewController screen with those added to CoreData.
+4. Configure UserProfileView with the user model from CoreData.
+
+### UnitTesting 
+1. Implement mocks for managers(FirebaseManager, ServiceManager, ApiManger). 
+2. Use dependency injection to test the viewModels with the created mocks.
+
+### UI 
+1. Add character to favorites functionality.
+2. Setup dark mode.
