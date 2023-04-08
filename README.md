@@ -20,7 +20,7 @@ The purpose of this project is to showcase various skills in iOS development thr
 
 ## Implemented: 
 
-1. Prod and Dev invironments.
+1. Prod and Dev environments.
 2. MVVM architecture.
 3. NSCache manager to cache images. 
 4. Firebase authentication with reference to respective cluster: prod/dev
