@@ -1,7 +1,7 @@
 name: Beta Distribution
 on: [push]
 jobs:
-    name: Deploy to Firebase:
+    name: Deploy to Firebase
     runs-on: macOS-latest
     steps:
       - name: Checkout
