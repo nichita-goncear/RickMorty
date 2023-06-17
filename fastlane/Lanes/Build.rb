@@ -5,10 +5,6 @@ platform :ios do
 
   		cocoapods(use_bundle_exec: false)
 
-	  	# bump_build_number()
- 
- 		sign_ad_hoc()
-
 	  	args = {  
 	  		scheme: ENV["DEV_SCHEME"],
 	        clean: ENV["CLEAN_BUILD"],
@@ -24,7 +20,7 @@ platform :ios do
 	        }),
 	        codesigning_identity: ENV["CERT_SIGN_IDENTITY_DISTRIBUTION"],
 	        output_directory: ENV["OUTPUT_IPA_PATH"],
-	        archive_path: ENV["OUTPUT_ARCHIVE_PATH"] + ENV["APP_NAME"],
+	        archive_path: ENV["OUTPUT_ARCHIVE_PATH_FULL"],
 	        output_name: ENV["OUTPUT_IPA_NAME"]
 	    }
 
@@ -39,7 +35,5 @@ platform :ios do
 		)
 
 	    build_app(args)
-
-	    upload_to_firebase({group: "internal"})
   	end
 end
