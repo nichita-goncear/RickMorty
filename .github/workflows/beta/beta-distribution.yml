@@ -1,6 +1,6 @@
 name: Beta Distribution
 on:
-  pull_request:
+  push:
     branches:
       - main
 jobs:
