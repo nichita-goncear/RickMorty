@@ -1,0 +1,81 @@
+name: Beta Distribution
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build-and-distribute:
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Cache RubyGems
+        uses: actions/cache@v1
+        with:
+          path: Vendor/Bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: ${{ runner.os }}-gem-
+      - name: Install dependencies
+        run: sh ./bootstrap.sh
+      - name: Sign for Ad-Hoc
+        run: bundle exec fastlane sign_ad_hoc
+      - name: Build
+        run: bundle exec fastlane build_dev
+      - name: Upload to Firebase
+        run: bundle exec fastlane upload_to_firebase group: internal
+    env:
+      APP_NAME = ${{ env.APP_NAME }}
+
+      PROJECT = ${{ env.PROJECT }}
+      WORKSPACE = ${{ env.WORKSPACE }}
+
+      DEV_SCHEME = ${{ env.DEV_SCHEME }}
+      PROD_SCHEME = ${{ env.PROD_SCHEME }}
+
+      TARGET = ${{ env.TARGET }}
+      TEST_TARGET = ${{ env.TEST_TARGET }}
+
+      DEV_APP_IDENTIFIER = ${{ env.DEV_APP_IDENTIFIER }}
+      PROD_APP_IDENTIFIER = ${{ env.PROD_APP_IDENTIFIER }}
+
+      MATCH_GIT_BASIC_AUTHORIZATION = ${{ env.MATCH_GIT_BASIC_AUTHORIZATION }}
+
+      APP_STORE_CONNECT_API_KEY_KEY_ID = ${{ env.APP_STORE_CONNECT_API_KEY_KEY_ID }}
+      APP_STORE_CONNECT_API_KEY_ISSUER_ID = ${{ env.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
+      APP_STORE_CONNECT_API_KEY_DURATION = ${{ env.APP_STORE_CONNECT_API_KEY_DURATION }}
+      APP_STORE_CONNECT_API_KEY_IN_HOUSE = ${{ env.APP_STORE_CONNECT_API_KEY_IN_HOUSE }}
+
+      APP_STORE_CONNECT_API_KEY_KEY = ${{ env.APP_STORE_CONNECT_API_KEY_KEY }}
+
+      SIGNING_DIR_PATH = ${{ env.SIGNING_DIR_PATH }}
+
+      CERT_PATH = ${{ env.CERT_PATH }}
+      CERT_SIGN_IDENTITY_DISTRIBUTION = ${{ env.CERT_SIGN_IDENTITY_DISTRIBUTION }}
+
+      KEYCHAIN_LIBRARY_PATH = ${{ env.KEYCHAIN_LIBRARY_PATH }}
+      KEYCHAIN_NAME = ${{ env.KEYCHAIN_NAME }}
+      KEYCHAIN_PASSWORD = ${{ env.KEYCHAIN_PASSWORD }}
+
+      AD_HOC_SIGH_NAME = ${{ env.AD_HOC_SIGH_NAME }}
+      SIGH_OUTPUT_PATH = ${{ env.SIGH_OUTPUT_PATH }}
+
+      AD_HOC_EXPORT_METHOD = ${{ env.AD_HOC_EXPORT_METHOD }}
+
+      DEV_BUILD_CONFIG = ${{ env.DEV_BUILD_CONFIG }}
+      RELEASE_BUILD_CONFIG = ${{ env.RELEASE_BUILD_CONFIG }}
+
+      CLEAN_BUILD = ${{ env.CLEAN_BUILD }}
+
+      INCLUDE_BITCODE = ${{ env.INCLUDE_BITCODE }}
+      COMPILE_BITCODE = ${{ env.COMPILE_BITCODE }}
+
+      OUTPUT_ARCHIVE_PATH = ${{ env.OUTPUT_ARCHIVE_PATH }}
+      OUTPUT_ARCHIVE_PATH_FULL = ${{ env.OUTPUT_ARCHIVE_PATH_FULL }}
+
+      OUTPUT_IPA_NAME = ${{ env.OUTPUT_IPA_NAME }}
+      OUTPUT_IPA_PATH = ${{ env.OUTPUT_IPA_PATH }}
+      OUTPUT_IPA_PATH_FULL = ${{ env.OUTPUT_IPA_PATH_FULL }}
+
+      LANES_REPORTS_PATH = ${{ env.LANES_REPORTS_PATH }}
+
+      FIREBASE_DEV_APP_ID = ${{ env.FIREBASE_DEV_APP_ID }}
