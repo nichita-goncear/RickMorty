@@ -1,0 +1,17 @@
+import("Lanes/Build.rb")
+import("Lanes/Distribute.rb")
+import("Lanes/Versioning.rb")
+import("Lanes/Testing.rb")
+import("Lanes/Keychain.rb")
+import("Lanes/Signing.rb")
+
+default_platform(:ios)
+
+platform :ios do
+
+	before_all do
+   		app_store_connect_api_key(
+			is_key_content_base64: true
+		)
+	end  
+end
