@@ -2,7 +2,7 @@ name: Beta Distribution
 on:
   pull_request:
     branches:
-      - master
+      - main
 jobs:
   build-and-distribute:
     runs-on: macOS-latest
