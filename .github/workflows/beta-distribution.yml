@@ -1,8 +1,5 @@
 name: Beta Distribution
-on:
-  pull_request:
-    branches:
-      - main
+on: workflow_dispatch
 jobs:
   build-and-distribute:
     runs-on: macOS-latest
@@ -22,7 +19,7 @@ jobs:
       - name: Build
         run: bundle exec fastlane build_dev
       - name: Upload to Firebase
-        run: bundle exec fastlane upload_to_firebase group: internal
+        run: bundle exec fastlane upload_to_firebase group:"$FIREBASE_TEST_GROUP"
     env:
       APP_NAME = ${{ env.APP_NAME }}
 
@@ -79,3 +76,4 @@ jobs:
       LANES_REPORTS_PATH = ${{ env.LANES_REPORTS_PATH }}
 
       FIREBASE_DEV_APP_ID = ${{ env.FIREBASE_DEV_APP_ID }}
+      FIREBASE_TEST_GROUP = internal
