@@ -1,79 +1,80 @@
 name: Beta Distribution
 on: [push]
 jobs:
-    name: Deploy to Firebase
-    runs-on: macOS-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Cache RubyGems
-        uses: actions/cache@v1
-        with:
-          path: Vendor/Bundle
-          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: ${{ runner.os }}-gem-
-      - name: Install dependencies
-        run: sh ./bootstrap.sh
-      - name: Sign for Ad-Hoc
-        run: bundle exec fastlane sign_ad_hoc
-      - name: Build
-        run: bundle exec fastlane build_dev
-      - name: Upload to Firebase
-        run: bundle exec fastlane upload_to_firebase group:"$FIREBASE_TEST_GROUP"
-    env:
-      APP_NAME = ${{ vars.APP_NAME }}
+    deploy:
+        name: Deploy to Firebase
+        runs-on: macOS-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v1
+          - name: Cache RubyGems
+            uses: actions/cache@v1
+            with:
+              path: Vendor/Bundle
+              key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+              restore-keys: ${{ runner.os }}-gem-
+          - name: Install dependencies
+            run: sh ./bootstrap.sh
+          - name: Sign for Ad-Hoc
+            run: bundle exec fastlane sign_ad_hoc
+          - name: Build
+            run: bundle exec fastlane build_dev
+          - name: Upload to Firebase
+            run: bundle exec fastlane upload_to_firebase group:"$FIREBASE_TEST_GROUP"
+        env:
+          APP_NAME = ${{ vars.APP_NAME }}
 
-      PROJECT = ${{ vars.PROJECT }}
-      WORKSPACE = ${{ vars.WORKSPACE }}
+          PROJECT = ${{ vars.PROJECT }}
+          WORKSPACE = ${{ vars.WORKSPACE }}
 
-      DEV_SCHEME = ${{ vars.DEV_SCHEME }}
-      PROD_SCHEME = ${{ vars.PROD_SCHEME }}
+          DEV_SCHEME = ${{ vars.DEV_SCHEME }}
+          PROD_SCHEME = ${{ vars.PROD_SCHEME }}
 
-      TARGET = ${{ vars.TARGET }}
-      TEST_TARGET = ${{ vars.TEST_TARGET }}
+          TARGET = ${{ vars.TARGET }}
+          TEST_TARGET = ${{ vars.TEST_TARGET }}
 
-      DEV_APP_IDENTIFIER = ${{ vars.DEV_APP_IDENTIFIER }}
-      PROD_APP_IDENTIFIER = ${{ vars.PROD_APP_IDENTIFIER }}
+          DEV_APP_IDENTIFIER = ${{ vars.DEV_APP_IDENTIFIER }}
+          PROD_APP_IDENTIFIER = ${{ vars.PROD_APP_IDENTIFIER }}
 
-      MATCH_GIT_BASIC_AUTHORIZATION = ${{ vars.MATCH_GIT_BASIC_AUTHORIZATION }}
+          MATCH_GIT_BASIC_AUTHORIZATION = ${{ vars.MATCH_GIT_BASIC_AUTHORIZATION }}
 
-      APP_STORE_CONNECT_API_KEY_KEY_ID = ${{ vars.APP_STORE_CONNECT_API_KEY_KEY_ID }}
-      APP_STORE_CONNECT_API_KEY_ISSUER_ID = ${{ vars.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
-      APP_STORE_CONNECT_API_KEY_DURATION = ${{ vars.APP_STORE_CONNECT_API_KEY_DURATION }}
-      APP_STORE_CONNECT_API_KEY_IN_HOUSE = ${{ vars.APP_STORE_CONNECT_API_KEY_IN_HOUSE }}
+          APP_STORE_CONNECT_API_KEY_KEY_ID = ${{ vars.APP_STORE_CONNECT_API_KEY_KEY_ID }}
+          APP_STORE_CONNECT_API_KEY_ISSUER_ID = ${{ vars.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY_DURATION = ${{ vars.APP_STORE_CONNECT_API_KEY_DURATION }}
+          APP_STORE_CONNECT_API_KEY_IN_HOUSE = ${{ vars.APP_STORE_CONNECT_API_KEY_IN_HOUSE }}
 
-      APP_STORE_CONNECT_API_KEY_KEY = ${{ vars.APP_STORE_CONNECT_API_KEY_KEY }}
+          APP_STORE_CONNECT_API_KEY_KEY = ${{ vars.APP_STORE_CONNECT_API_KEY_KEY }}
 
-      SIGNING_DIR_PATH = ${{ vars.SIGNING_DIR_PATH }}
+          SIGNING_DIR_PATH = ${{ vars.SIGNING_DIR_PATH }}
 
-      CERT_PATH = ${{ vars.CERT_PATH }}
-      CERT_SIGN_IDENTITY_DISTRIBUTION = ${{ vars.CERT_SIGN_IDENTITY_DISTRIBUTION }}
+          CERT_PATH = ${{ vars.CERT_PATH }}
+          CERT_SIGN_IDENTITY_DISTRIBUTION = ${{ vars.CERT_SIGN_IDENTITY_DISTRIBUTION }}
 
-      KEYCHAIN_LIBRARY_PATH = ${{ vars.KEYCHAIN_LIBRARY_PATH }}
-      KEYCHAIN_NAME = ${{ vars.KEYCHAIN_NAME }}
-      KEYCHAIN_PASSWORD = ${{ vars.KEYCHAIN_PASSWORD }}
+          KEYCHAIN_LIBRARY_PATH = ${{ vars.KEYCHAIN_LIBRARY_PATH }}
+          KEYCHAIN_NAME = ${{ vars.KEYCHAIN_NAME }}
+          KEYCHAIN_PASSWORD = ${{ vars.KEYCHAIN_PASSWORD }}
 
-      AD_HOC_SIGH_NAME = ${{ vars.AD_HOC_SIGH_NAME }}
-      SIGH_OUTPUT_PATH = ${{ vars.SIGH_OUTPUT_PATH }}
+          AD_HOC_SIGH_NAME = ${{ vars.AD_HOC_SIGH_NAME }}
+          SIGH_OUTPUT_PATH = ${{ vars.SIGH_OUTPUT_PATH }}
 
-      AD_HOC_EXPORT_METHOD = ${{ vars.AD_HOC_EXPORT_METHOD }}
+          AD_HOC_EXPORT_METHOD = ${{ vars.AD_HOC_EXPORT_METHOD }}
 
-      DEV_BUILD_CONFIG = ${{ vars.DEV_BUILD_CONFIG }}
-      RELEASE_BUILD_CONFIG = ${{ vars.RELEASE_BUILD_CONFIG }}
+          DEV_BUILD_CONFIG = ${{ vars.DEV_BUILD_CONFIG }}
+          RELEASE_BUILD_CONFIG = ${{ vars.RELEASE_BUILD_CONFIG }}
 
-      CLEAN_BUILD = ${{ vars.CLEAN_BUILD }}
+          CLEAN_BUILD = ${{ vars.CLEAN_BUILD }}
 
-      INCLUDE_BITCODE = ${{ vars.INCLUDE_BITCODE }}
-      COMPILE_BITCODE = ${{ vars.COMPILE_BITCODE }}
+          INCLUDE_BITCODE = ${{ vars.INCLUDE_BITCODE }}
+          COMPILE_BITCODE = ${{ vars.COMPILE_BITCODE }}
 
-      OUTPUT_ARCHIVE_PATH = ${{ vars.OUTPUT_ARCHIVE_PATH }}
-      OUTPUT_ARCHIVE_PATH_FULL = ${{ vars.OUTPUT_ARCHIVE_PATH_FULL }}
+          OUTPUT_ARCHIVE_PATH = ${{ vars.OUTPUT_ARCHIVE_PATH }}
+          OUTPUT_ARCHIVE_PATH_FULL = ${{ vars.OUTPUT_ARCHIVE_PATH_FULL }}
 
-      OUTPUT_IPA_NAME = ${{ vars.OUTPUT_IPA_NAME }}
-      OUTPUT_IPA_PATH = ${{ vars.OUTPUT_IPA_PATH }}
-      OUTPUT_IPA_PATH_FULL = ${{ vars.OUTPUT_IPA_PATH_FULL }}
+          OUTPUT_IPA_NAME = ${{ vars.OUTPUT_IPA_NAME }}
+          OUTPUT_IPA_PATH = ${{ vars.OUTPUT_IPA_PATH }}
+          OUTPUT_IPA_PATH_FULL = ${{ vars.OUTPUT_IPA_PATH_FULL }}
 
-      LANES_REPORTS_PATH = ${{ vars.LANES_REPORTS_PATH }}
+          LANES_REPORTS_PATH = ${{ vars.LANES_REPORTS_PATH }}
 
-      FIREBASE_DEV_APP_ID = ${{ vars.FIREBASE_DEV_APP_ID }}
-      FIREBASE_TEST_GROUP = internal
+          FIREBASE_DEV_APP_ID = ${{ vars.FIREBASE_DEV_APP_ID }}
+          FIREBASE_TEST_GROUP = internal
